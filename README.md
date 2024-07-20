@@ -1,8 +1,7 @@
 # PfaltzUI
 Custom UI for "7 days to die"
 
-Вдохновился [SMX](https://github.com/Sirillion) и [RamosUI](https://7daystodiemods.com/ramos-xui/).
-Особенность в том что данный мод работает на стороне сервера, клиентам скачивать не нужно.
+Мне нравятся [SMX](https://github.com/Sirillion) и [RamosUI](https://7daystodiemods.com/ramos-xui/), но обе эти модификации должны устанавливаться клиентами, я решил сделать что-то подобное, только на стороне сервера.
 
 <p align="center">
   <img src="Screenshots/1.png" width="950" title="Screenshot 1">
