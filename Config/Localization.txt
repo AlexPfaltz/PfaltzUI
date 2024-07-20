@@ -1,0 +1,3 @@
+Key,File,Type,UsedInMainMenu,NoTranslate,english,Context / Alternate Text,german,spanish,french,italian,japanese,koreana,polish,brazilian,russian,turkish,schinese,tchinese
+xuiCraftingQueue,UI,XUI,,x,Crafting Queue,,,,,,,,,,Очередь крафта,,,
+xuiActiveBuffs,UI,XUI,,x,Active Buffs,,,,,,,,,,Активные баффы,,,
