@@ -386,7 +386,7 @@
 					<backpack_item_stack name="0"/>
 				</grid>
 			</panel>
-			<panel name="bottomPanel" pos="0,-578" height="43" depth="1" backgroundspritename="ui_game_panel_header">
+			<panel name="bottomPanel" pos="0,-582" height="43" depth="1" backgroundspritename="ui_game_panel_header">
 				<label depth="2" pos="292,-12" width="80" height="28" text="{currencyamount}" justify="right" />
 				<sprite depth="4" name="costIcon" sprite="ui_game_symbol_coin" size="24,24" pos="377,-12" color="[white]" foregroundlayer="true" />
 			</panel>
