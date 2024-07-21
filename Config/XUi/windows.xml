@@ -371,22 +371,22 @@
 			    <sprite depth="3" name="windowIcon" style="icon32px" pivot="center" pos="21,-21" sprite="ui_game_symbol_backpack" />
 			    <label depth="3" name="windowName" pos="42,-6" width="180" height="32" text="INVENTORY" text_key="xuiInventory" font_size="32" />
 				<rect pos="204,0" width="300" controller="ContainerStandardControls" move_start_bottom_left="true" is_backpack="true">
-					<button depth="3" name="btnClearInventory" sprite="ui_game_symbol_trash" tooltip_key="lblClearInventory" pos="-40,-22" style="icon32px, press, hover" pivot="center" sound="[paging_click]" visible="{creativewindowopen}" />
-					<button depth="3" name="btnSort" sprite="ui_game_symbol_sort" tooltip_key="lblSortContainer" pos="0,-22" style="icon32px, press, hover" pivot="center" sound="[paging_click]" />
+					<button depth="3" name="btnClearInventory" sprite="ui_game_symbol_trash" tooltip_key="lblClearInventory" pos="-45,-22" style="icon32px, press, hover" pivot="center" sound="[paging_click]" visible="{creativewindowopen}" />
+					<button depth="3" name="btnSort" sprite="ui_game_symbol_sort" tooltip_key="lblSortContainer" pos="50,-22" style="icon32px, press, hover" pivot="center" sound="[paging_click]" />
+					<button depth="3" name="btnToggleLockMode" sprite="ui_game_symbol_lock" tooltip_key="xuiStashLockModeToggle" pos="0, -22" style="icon32px, press, hover" pivot="center" sound="[paging_click]" selected="{userlockmode}" />
 					<rect pos="0, 0" visible="{lootingorvehiclestorage}">
-					    <button   depth="3" name="btnMoveAll"          sprite="ui_game_symbol_store_all_down"     tooltip_key="lblStashAll"             pos="80, -22" style="icon32px, press, hover" pivot="center" sound="[paging_click]" />
-					    <button   depth="3" name="btnMoveFillAndSmart" sprite="ui_game_symbol_store_similar_down" tooltip_key="lblStashFillAndSmart" pos="40, -22" style="icon32px, press, hover" pivot="center" sound="[paging_click]" />
+					    <button   depth="3" name="btnMoveAll"          sprite="ui_game_symbol_store_all_down"     tooltip_key="lblStashAll"             pos="150, -22" style="icon32px, press, hover" pivot="center" sound="[paging_click]" />
+					    <button   depth="3" name="btnMoveFillAndSmart" sprite="ui_game_symbol_store_similar_down" tooltip_key="lblStashFillAndSmart" pos="100, -22" style="icon32px, press, hover" pivot="center" sound="[paging_click]" />
 					</rect>
-					<combobox depth="3" name="cbxLockedSlots" pos="105,-7" width="100" height="30" tooltip_key="xuiStashLockedSlots" type="ComboBoxInt" value_min="0" value_max="45" value_wrap="true" value_increment="1" />
 				</rect>
 			</panel>
-			<panel name="content" width="100%" height="642" depth="0" pos="0,-46" disableautobackground="true">
-				<sprite depth="8" name="backgroundMain" sprite="menu_empty3px" pos="0,0" width="407" height="609" color="[black]" type="sliced" fillcenter="false" on_press="true" />
-				<grid depth="10" name="inventory" rows="9" cols="6" pos="3,-3" cell_width="67" cell_height="67" controller="Backpack" repeat_content="true" >
+			<panel name="content" width="100%" height="536" depth="0" pos="0,-46" disableautobackground="true">
+				<sprite depth="8" name="backgroundMain" sprite="menu_empty3px" pos="0,0" width="407" height="536" color="[black]" type="sliced" fillcenter="false" on_press="true" gamepad_selectable="false" />
+				<grid depth="10" name="inventory" rows="8" cols="6" pos="3,-3" cell_width="67" cell_height="67" controller="Backpack" repeat_content="true" >
 					<backpack_item_stack name="0"/>
 				</grid>
 			</panel>
-			<panel name="conclusion" pos="0,-645" height="43" depth="1" backgroundspritename="ui_game_panel_header">
+			<panel name="bottomPanel" pos="0,-578" height="43" depth="1" backgroundspritename="ui_game_panel_header">
 				<label depth="2" pos="292,-12" width="80" height="28" text="{currencyamount}" justify="right" />
 				<sprite depth="4" name="costIcon" sprite="ui_game_symbol_coin" size="24,24" pos="377,-12" color="[white]" foregroundlayer="true" />
 			</panel>
@@ -526,7 +526,7 @@
 					<trader_item name="0"/>
 				</grid>
 			</panel>
-			<panel name="conclusion" height="43" depth="1" pos="0,-624" backgroundspritename="ui_game_panel_header">
+			<panel name="bottomPanel" height="43" depth="1" pos="0,-624" backgroundspritename="ui_game_panel_header">
 			<label depth="5" pos="20,-8" width="180" height="28" text="{renttimeleft}" visible="{isrenter}" />
 				<label depth="2" pos="260,-8" width="300" height="28" text="{restocklabel}: {timeleft}" justify="right" visible="{showrestock}" />
 				<label pos="552, -6" depth="2" name="availableMoney" width="64" height="32" text="{availablemoney}" font_size="32" justify="right" pivot="topright" visible="{isowner}"/>
