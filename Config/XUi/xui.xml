@@ -45,4 +45,9 @@
 		<window name="windowOutput" />
 		<window name="windowNonPagingHeader" />
 	</set>
+	<set xpath="//window_group[@name='dewcollector']">
+		<window name="windowDewCollectorMods" />
+		<window name="windowDewCollector"/>
+		<window name="windowNonPagingHeader" />
+	</set>
 </Config>
