@@ -564,4 +564,5 @@
 			</rect>
 		</window>
     </append>
+	<set xpath="//window[@name='windowDewCollectorMods']/@panel">Left</set>
 </Config>
