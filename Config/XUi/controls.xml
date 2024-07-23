@@ -76,7 +76,7 @@
 				<filledsprite depth="4" name="durability" width="70" height="10" sprite="menu_empty2px" color="{durabilitycolor}" fill="{durabilityfill}" type="filled" pos="1, -60" foregroundlayer="true" visible="{hasdurability}" />
 				<sprite depth="5" name="disabledOverlay" width="72" height="72" color="[darkGrey_half_alpha]" pos="1,-1" type="sliced" visible="false"/>
 				<label depth="7" name="stackValue" pos="-2,-45" width="70" height="28" text="{itemcount}" font_size="26" effect="outline" justify="{#hasdurability ? 'Center' : 'Right'}" visible="{#!hasdurability}" />
-				<label depth="5" name="textLevel" pos="55,-62" width="38" height="28" text="LEVEL" text_key="pfaltzUiLevel" color="{durabilitycolor}" font_size="20" effect="outline" justify="right" pivot="bottomright" visible="{hasdurability}"/>
+				<label depth="5" name="textLevel" pos="55,-62" width="55" height="38" text="LEVEL" text_key="pfaltzUiLevel" color="{durabilitycolor}" font_size="20" effect="outline" justify="right" pivot="bottomright" visible="{hasdurability}"/>
 				<label depth="5" name="qualityValue" pos="58,-64" width="28" height="28" text="{itemcount}" color="{durabilitycolor}" font_size="26" effect="outline" pivot="bottomleft" visible="{hasdurability}"/>
 				<label depth="7" name="timer" pos="35,-38" width="70" height="24" font_size="24" justify="center" pivot="center" effect="outline" color="[beige]"/>
 				<sprite depth="9" name="cancel" sprite="ui_game_symbol_x" width="70" height="70" color="255,0,0,255" type="sliced" visible="false" foregroundlayer="true"/>
@@ -99,7 +99,7 @@
 				<filledsprite depth="4" name="durability" width="63" height="10" sprite="menu_empty2px" color="{durabilitycolor}" fill="{durabilityfill}" type="filled" pos="1, -55" foregroundlayer="true" visible="{hasdurability}" />
 				<sprite depth="5" name="disabledOverlay" width="64" height="64" color="[darkGrey_half_alpha]" pos="1,-1" type="sliced" visible="false"/>
 				<label depth="7" name="stackValue" pos="-2,-40" width="62" height="28" text="{itemcount}" font_size="26" effect="outline" justify="{#hasdurability ? 'Center' : 'Right'}" visible="{#!hasdurability}" />
-				<label depth="5" name="textLevel" pos="47,-56" width="38" height="28" text="LEVEL" text_key="pfaltzUiLevel" color="{durabilitycolor}" font_size="20" effect="outline" justify="right" pivot="bottomright" visible="{hasdurability}"/>
+				<label depth="5" name="textLevel" pos="47,-56" width="48" height="38" text="LEVEL" text_key="pfaltzUiLevel" color="{durabilitycolor}" font_size="20" effect="outline" justify="right" pivot="bottomright" visible="{hasdurability}"/>
 				<label depth="5" name="qualityValue" pos="50,-58" width="28" height="28" text="{itemcount}" color="{durabilitycolor}" font_size="26" effect="outline" pivot="bottomleft" visible="{hasdurability}"/>
 				<label depth="7" name="timer" pos="35,-33" width="62" height="24" font_size="24" justify="center" pivot="center" effect="outline" color="[beige]"/>
 				<sprite depth="9" name="cancel" sprite="ui_game_symbol_x" width="62" height="62" color="255,0,0,255" type="sliced" visible="false" foregroundlayer="true"/>

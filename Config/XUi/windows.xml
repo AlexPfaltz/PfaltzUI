@@ -193,7 +193,7 @@
 					<sprite depth="1" color="[darkGrey]" pos="0,0" type="sliced" globalopacity="true" visible="{#!hasdurability}"/>
 			    	<sprite depth="12" name="itemPreview" width="165" height="165" atlas="ItemIconAtlas" sprite="{itemicon}" color="{itemicontint}" pos="170,-115" pivot="center" foregroundlayer="true"/>
 			    	<sprite depth="8" name="itemtypeicon" width="32" height="32" sprite="ui_game_symbol_{itemtypeicon}" pos="4,-8" foregroundlayer="true" visible="{hasitemtypeicon}" color="{itemtypeicontint}" />
-					<label depth="11" name="textLevel" pos="320,-195" width="100" height="60" text="LEVEL" text_key="pfaltzUiLevel" color="{durabilitycolor}" font_size="58" effect="outline" justify="right" pivot="bottomright" visible="{hasdurability}"/>
+					<label depth="11" name="textLevel" pos="320,-195" width="150" height="60" text="LEVEL" text_key="pfaltzUiLevel" color="{durabilitycolor}" font_size="58" effect="outline" justify="right" pivot="bottomright" visible="{hasdurability}"/>
 					<label depth="11" name="qualityValue" pos="330,-197" width="68" height="68" text="{durabilitytext}" color="{durabilitycolor}" font_size="68" effect="outline" pivot="bottomleft" visible="{hasdurability}"/>
 					<sprite depth="5" name="clockIcon" size="32,32" sprite="ui_game_symbol_clock" pos="245, -187" type="sliced" color="[iconColor]" foregroundlayer="true" />
 					<label depth="5" name="craftingTime" width="200" height="64" pos="280, -185" text="{craftingtime}" font_size="40" color="[beige]"/>
@@ -278,7 +278,7 @@
 			    	<sprite depth="5" name="durabilityBackground" height="20" width="314" color="48,48,48,255" type="sliced" pos="30, -197" visible="{hasdurability}"/>
 			    	<filledsprite depth="6" name="durabilityBar" height="20" width="314" color="{durabilitycolor}" type="filled" pos="30, -197" fill="{durabilityfill}" visible="{hasdurability}" />
 					<label name="durabilityValue" depth="12" pos="162,-185" width="200" height="52" text="{durabilitytext}" font_size="40" justify="{durabilityjustify}" color="[white]" visible="{#!hasdurability}" />
-			    	<label depth="11" name="textLevel" pos="320,-200" width="100" height="60" text="LEVEL" text_key="pfaltzUiLevel" color="{durabilitycolor}" font_size="58" effect="outline" justify="right" pivot="bottomright" visible="{hasdurability}"/>
+			    	<label depth="11" name="textLevel" pos="320,-200" width="150" height="60" text="LEVEL" text_key="pfaltzUiLevel" color="{durabilitycolor}" font_size="58" effect="outline" justify="right" pivot="bottomright" visible="{hasdurability}"/>
 					<label depth="11" name="qualityValue" pos="330,-202" width="68" height="68" text="{durabilitytext}" color="{durabilitycolor}" font_size="68" effect="outline" pivot="bottomleft" visible="{hasdurability}"/>
 				</rect>
 			    <rect depth="4" pos="375,0" width="62" height="540">
