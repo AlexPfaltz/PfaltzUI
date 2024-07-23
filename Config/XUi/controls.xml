@@ -5,8 +5,6 @@
 	<remove xpath="/controls/unlocked_by_row"/>
 	<remove xpath="/controls/item_stack"/>
 	<remove xpath="/controls/backpack_item_stack"/>
-	<remove xpath="/controls/equipment_stack"/>
-	<remove xpath="/controls/equipment_stack_sdcs"/>
 	<remove xpath="/controls/drag_item_stack"/>
 	<remove xpath="/controls/active_buff_entry"/>
 	<remove xpath="/controls/player_stats_entry"/>
@@ -27,7 +25,7 @@
 			<rect height="70" controller="ItemActionEntry" disabled_font_color="[disabledLabelColor]" default_font_color="[labelColor]" default_background_color="[mediumGrey]" tooltip="{actionname}">
 				<sprite depth="1" name="background" color="[mediumGrey]" type="sliced" on_press="true" on_hover="true" width="62" sound_play_on_hover="[default_hover]"/>
 				<sprite depth="4" name="Icon" sprite="{actionicon}" size="24,24" color="{statuscolor}" pos="31,-12" pivot="center" foregroundlayer="true"/>
-				<label depth="4" name="Name" pos="0,0" width="0" height="0" text="" font_size="1" color="{statuscolor}" effect="shadow" pivot="left" />
+				<label depth="4" name="Name" pos="0,0" width="0" height="0" text="{actionname}" font_size="1" color="{statuscolor}" effect="shadow" pivot="left" />
 				<gamepad_icon depth="4" name="gamepadIcon" pos="31,-44" pivot="center" />
 				<label depth="4" name="keyboardButton" pos="31,-44" width="62" height="26" text="&lt;W&gt;" font_size="26" color="{statuscolor}" effect="shadow" pivot="center" justify="center" />
 			</rect>
@@ -78,6 +76,8 @@
 				<filledsprite depth="4" name="durability" width="70" height="10" sprite="menu_empty2px" color="{durabilitycolor}" fill="{durabilityfill}" type="filled" pos="1, -60" foregroundlayer="true" visible="{hasdurability}" />
 				<sprite depth="5" name="disabledOverlay" width="72" height="72" color="[darkGrey_half_alpha]" pos="1,-1" type="sliced" visible="false"/>
 				<label depth="7" name="stackValue" pos="-2,-45" width="70" height="28" text="{itemcount}" font_size="26" effect="outline" justify="{#hasdurability ? 'Center' : 'Right'}" visible="{#!hasdurability}" />
+				<label depth="5" name="textLevel" pos="55,-62" width="38" height="28" text="LEVEL" text_key="pfaltzUiLevel" color="{durabilitycolor}" font_size="20" effect="outline" justify="right" pivot="bottomright" visible="{hasdurability}"/>
+				<label depth="5" name="qualityValue" pos="58,-64" width="28" height="28" text="{itemcount}" color="{durabilitycolor}" font_size="26" effect="outline" pivot="bottomleft" visible="{hasdurability}"/>
 				<label depth="7" name="timer" pos="35,-38" width="70" height="24" font_size="24" justify="center" pivot="center" effect="outline" color="[beige]"/>
 				<sprite depth="9" name="cancel" sprite="ui_game_symbol_x" width="70" height="70" color="255,0,0,255" type="sliced" visible="false" foregroundlayer="true"/>
 				<sprite depth="13" name="assembleIcon" size="40,40" sprite="{stacklockicon}" color="{stacklockcolor}" visible="{isassemblelocked}" pos="14,-14" foregroundlayer="true" />
@@ -99,6 +99,8 @@
 				<filledsprite depth="4" name="durability" width="63" height="10" sprite="menu_empty2px" color="{durabilitycolor}" fill="{durabilityfill}" type="filled" pos="1, -55" foregroundlayer="true" visible="{hasdurability}" />
 				<sprite depth="5" name="disabledOverlay" width="64" height="64" color="[darkGrey_half_alpha]" pos="1,-1" type="sliced" visible="false"/>
 				<label depth="7" name="stackValue" pos="-2,-40" width="62" height="28" text="{itemcount}" font_size="26" effect="outline" justify="{#hasdurability ? 'Center' : 'Right'}" visible="{#!hasdurability}" />
+				<label depth="5" name="textLevel" pos="47,-56" width="38" height="28" text="LEVEL" text_key="pfaltzUiLevel" color="{durabilitycolor}" font_size="20" effect="outline" justify="right" pivot="bottomright" visible="{hasdurability}"/>
+				<label depth="5" name="qualityValue" pos="50,-58" width="28" height="28" text="{itemcount}" color="{durabilitycolor}" font_size="26" effect="outline" pivot="bottomleft" visible="{hasdurability}"/>
 				<label depth="7" name="timer" pos="35,-33" width="62" height="24" font_size="24" justify="center" pivot="center" effect="outline" color="[beige]"/>
 				<sprite depth="9" name="cancel" sprite="ui_game_symbol_x" width="62" height="62" color="255,0,0,255" type="sliced" visible="false" foregroundlayer="true"/>
 				<sprite depth="13" name="assembleIcon" size="35,35" sprite="{stacklockicon}" color="{stacklockcolor}" visible="{isassemblelocked}" pos="14,-14" foregroundlayer="true" />
@@ -108,32 +110,6 @@
 				<sprite depth="15" name="iconSlotLock" width="20" height="20" sprite="ui_game_symbol_lock" pos="50, -14" style="icon32px" pivot="center" visible="{# userlockedslot and !userlockmode}" color="[lightGrey]" />
 			</rect>
 		</backpack_item_stack>
-		<equipment_stack>
-			<rect depth="1" controller="EquipmentStack" style="itemStack, hover" tooltip="test">
-				<sprite depth="2" name="backgroundMain" sprite="menu_empty3px" pos="-3,3" width="74" height="74" color="[black]" type="sliced" fillcenter="false" />
-				<sprite depth="3" name="background" sprite="menu_empty3px" width="68" height="68" color="{selectionbordercolor}" type="sliced" fillcenter="false"/>
-				<sprite depth="2" name="highlightOverlay" width="66" height="66" color="[mediumGrey]" pos="1,-1" type="sliced" globalopacity="true" />
-				<sprite depth="6" name="itemIcon" width="64" height="64" atlas="ItemIconAtlas" sprite="campfire" pos="34,-34" pivot="center" foregroundlayer="true"/>
-				<sprite depth="8" name="lockTypeIcon" width="24" height="24" sprite="" pos="2,-2" foregroundlayer="true"/>
-				<sprite depth="3" name="durabilityBackground" width="64" height="10" color="[darkGrey]" type="sliced" pos="2, -56" foregroundlayer="true"/>
-				<!--sprite depth="4" name="durability" width="60" height="60" color="[transparent]" type="sliced" pos="3, -3" foregroundlayer="true"/>
-				<sprite depth="4" color="[black_alpha]" pos="3,-3" width="60" height="60" type="sliced" visible="{hasdurability}"/-->
-				<filledsprite depth="4" name="durability" width="64" height="10" color="[transparent]" type="filled" pos="2, -56" foregroundlayer="true"/>
-				<label depth="7" name="stackValue" pos="0,-45" width="68" height="28" text="" font_size="26" justify="center" visible="false"/>
-			</rect>
-		</equipment_stack>
-		<equipment_stack_sdcs>
-			<rect depth="1" controller="EquipmentStack" style="itemStack, hover" tooltip="test">
-				<sprite depth="2" name="backgroundMain" sprite="menu_empty3px" pos="-3,3" width="83" height="83" color="[black]" type="sliced" fillcenter="false" />
-				<sprite depth="3" name="background" sprite="menu_empty3px" width="78" height="78" color="{selectionbordercolor}" type="sliced" fillcenter="false"/>
-				<sprite depth="2" name="highlightOverlay" width="76" height="76" color="[mediumGrey]" pos="1,-1" type="sliced" globalopacity="true"/>
-				<sprite depth="6" name="itemIcon" width="74" height="74" atlas="ItemIconAtlas" sprite="campfire" pos="39,-39" pivot="center" foregroundlayer="true"/>
-				<sprite depth="8" name="lockTypeIcon" width="34" height="34" sprite="" pos="2,-12" foregroundlayer="true"/>
-				<sprite depth="3" name="durabilityBackground" width="74" height="10" color="[darkGrey]" type="sliced" pos="2, -66" foregroundlayer="true"/>
-				<filledsprite depth="4" name="durability" width="74" height="10" color="[transparent]" type="filled" pos="2, -66" foregroundlayer="true"/>
-				<label depth="7" name="stackValue" pos="0,-50" width="78" height="28" text="" font_size="26" justify="center" visible="false"/>
-			</rect>
-		</equipment_stack_sdcs>
 		<drag_item_stack>
 			<rect controller="ItemStack" width="86" height="86" pos="-43,43">
 				<sprite depth="3" name="background" width="1" height="1" color="{selectionbordercolor}" type="sliced" globalopacity="true"/>
@@ -141,6 +117,8 @@
 				<sprite depth="3" name="durabilityBackground" height="10" color="[darkGrey]" type="sliced" pos="0, -76" foregroundlayer="true" visible="{hasdurability}" />
 				<filledsprite depth="4" name="durability" height="10" color="{durabilitycolor}" fill="{durabilityfill}" type="filled" pos="0, -76" foregroundlayer="true" visible="{hasdurability}" />
 				<label depth="7" name="stackValue" pos="6,-60" width="72" height="28" text="{itemcount}" font_size="26" effect="outline" justify="{#hasdurability ? 'Center' : 'Right'}" visible="{#!hasdurability}" />
+				<label depth="5" name="textLevel" pos="70,-77" width="38" height="28" text="LEVEL" text_key="pfaltzUiLevel" color="{durabilitycolor}" font_size="20" effect="outline" justify="right" pivot="bottomright" visible="{hasdurability}"/>
+				<label depth="5" name="qualityValue" pos="73,-79" width="28" height="28" text="{itemcount}" color="{durabilitycolor}" font_size="26" effect="outline" pivot="bottomleft" visible="{hasdurability}"/>
 			</rect>
 		</drag_item_stack>
 		<active_buff_entry>
@@ -166,6 +144,7 @@
 				<sprite depth="9" name="itemtypeicon" width="24" height="24" sprite="ui_game_symbol_{itemtypeicon}" pos="2,-2" foregroundlayer="true" visible="{hasitemtypeicon}" color="{itemtypeicontint}" />
 				<sprite depth="6" name="durabilityBackground" width="68" height="10" sprite="menu_empty3px" color="[black_half_alpha]" type="sliced" pos="3, -63" foregroundlayer="true" visible="{hasdurability}"/>
 				<sprite depth="7" name="durabilityBar" height="10" width="68" color="{durabilitycolor}" type="filled" fill="{durabilityfill}" pos="3, -63" visible="{hasdurability}" />
+				<label  depth="10" name="durabilityValue" pos="0,-49" width="70" height="26" text="{durabilityvalue}" font_size="26" justify="center" visible="{hasdurability}"/>
 			</rect>
 		</trader_item>
 	</append>
