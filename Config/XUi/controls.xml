@@ -76,7 +76,7 @@
 				<filledsprite depth="4" name="durability" width="70" height="10" sprite="menu_empty2px" color="{durabilitycolor}" fill="{durabilityfill}" type="filled" pos="1, -60" foregroundlayer="true" visible="{hasdurability}" />
 				<sprite depth="5" name="disabledOverlay" width="72" height="72" color="[darkGrey_half_alpha]" pos="1,-1" type="sliced" visible="false"/>
 				<label depth="7" name="stackValue" pos="-2,-45" width="70" height="28" text="{itemcount}" font_size="26" effect="outline" justify="{#hasdurability ? 'Center' : 'Right'}" visible="{#!hasdurability}" />
-				<label depth="5" name="textLevel" pos="55,-62" width="55" height="38" text="LEVEL" text_key="pfaltzUiLevel" color="{durabilitycolor}" font_size="20" effect="outline" justify="right" pivot="bottomright" visible="{hasdurability}"/>
+				<label depth="5" name="textLevel" pos="58,-62" width="55" height="38" text="LEVEL" text_key="pfaltzUiLevel" color="{durabilitycolor}" font_size="20" effect="outline" justify="right" pivot="bottomright" visible="{hasdurability}"/>
 				<label depth="5" name="qualityValue" pos="58,-64" width="28" height="28" text="{itemcount}" color="{durabilitycolor}" font_size="26" effect="outline" pivot="bottomleft" visible="{hasdurability}"/>
 				<label depth="7" name="timer" pos="35,-38" width="70" height="24" font_size="24" justify="center" pivot="center" effect="outline" color="[beige]"/>
 				<sprite depth="9" name="cancel" sprite="ui_game_symbol_x" width="70" height="70" color="255,0,0,255" type="sliced" visible="false" foregroundlayer="true"/>
@@ -99,7 +99,7 @@
 				<filledsprite depth="4" name="durability" width="63" height="10" sprite="menu_empty2px" color="{durabilitycolor}" fill="{durabilityfill}" type="filled" pos="1, -55" foregroundlayer="true" visible="{hasdurability}" />
 				<sprite depth="5" name="disabledOverlay" width="64" height="64" color="[darkGrey_half_alpha]" pos="1,-1" type="sliced" visible="false"/>
 				<label depth="7" name="stackValue" pos="-2,-40" width="62" height="28" text="{itemcount}" font_size="26" effect="outline" justify="{#hasdurability ? 'Center' : 'Right'}" visible="{#!hasdurability}" />
-				<label depth="5" name="textLevel" pos="47,-56" width="48" height="38" text="LEVEL" text_key="pfaltzUiLevel" color="{durabilitycolor}" font_size="20" effect="outline" justify="right" pivot="bottomright" visible="{hasdurability}"/>
+				<label depth="5" name="textLevel" pos="50,-56" width="50" height="38" text="LEVEL" text_key="pfaltzUiLevel" color="{durabilitycolor}" font_size="20" effect="outline" justify="right" pivot="bottomright" visible="{hasdurability}"/>
 				<label depth="5" name="qualityValue" pos="50,-58" width="28" height="28" text="{itemcount}" color="{durabilitycolor}" font_size="26" effect="outline" pivot="bottomleft" visible="{hasdurability}"/>
 				<label depth="7" name="timer" pos="35,-33" width="62" height="24" font_size="24" justify="center" pivot="center" effect="outline" color="[beige]"/>
 				<sprite depth="9" name="cancel" sprite="ui_game_symbol_x" width="62" height="62" color="255,0,0,255" type="sliced" visible="false" foregroundlayer="true"/>
@@ -113,11 +113,13 @@
 		<drag_item_stack>
 			<rect controller="ItemStack" width="86" height="86" pos="-43,43">
 				<sprite depth="3" name="background" width="1" height="1" color="{selectionbordercolor}" type="sliced" globalopacity="true"/>
+				<sprite depth="2" name="quality" width="86" height="86" color="{durabilitycolor}" type="sliced" globalopacity="true" visible="{hasdurability}"/>
+				<sprite depth="3" color="[black_alpha]" pos="3,-3" width="80" height="80" type="sliced" visible="{hasdurability}"/>
 				<sprite depth="6" name="itemIcon" width="86" height="86" atlas="ItemIconAtlas" sprite="{itemicon}" pos="0,10" pivot="topleft" foregroundlayer="true" color="{iconcolor}"/>
 				<sprite depth="3" name="durabilityBackground" height="10" color="[darkGrey]" type="sliced" pos="0, -76" foregroundlayer="true" visible="{hasdurability}" />
 				<filledsprite depth="4" name="durability" height="10" color="{durabilitycolor}" fill="{durabilityfill}" type="filled" pos="0, -76" foregroundlayer="true" visible="{hasdurability}" />
 				<label depth="7" name="stackValue" pos="6,-60" width="72" height="28" text="{itemcount}" font_size="26" effect="outline" justify="{#hasdurability ? 'Center' : 'Right'}" visible="{#!hasdurability}" />
-				<label depth="5" name="textLevel" pos="70,-77" width="38" height="28" text="LEVEL" text_key="pfaltzUiLevel" color="{durabilitycolor}" font_size="20" effect="outline" justify="right" pivot="bottomright" visible="{hasdurability}"/>
+				<label depth="5" name="textLevel" pos="70,-77" width="78" height="28" text="LEVEL" text_key="pfaltzUiLevel" color="{durabilitycolor}" font_size="20" effect="outline" justify="right" pivot="bottomright" visible="{hasdurability}"/>
 				<label depth="5" name="qualityValue" pos="73,-79" width="28" height="28" text="{itemcount}" color="{durabilitycolor}" font_size="26" effect="outline" pivot="bottomleft" visible="{hasdurability}"/>
 			</rect>
 		</drag_item_stack>
@@ -140,12 +142,29 @@
 			<rect height="73" style="itemStack, hover, scroll" controller="TraderItemEntry" sound="[recipe_click]" sound_play_on_hover="[default_hover]" tooltip="{itemname}">
 				<sprite depth="2" name="backgroundMain" sprite="menu_empty3px" pos="-3,3" width="79" height="79" color="[black]" type="sliced" fillcenter="false" />
 				<sprite depth="3" name="background" width="73" height="73" color="[darkGrey]" type="sliced"/>
+				<sprite depth="2" name="quality" width="72" height="72" color="{durabilitycolor}" type="sliced" globalopacity="true" visible="{hasdurability}"/>
+				<sprite depth="3" color="[black_alpha]" pos="3,-3" width="66" height="66" type="sliced" visible="{hasdurability}"/>
 				<sprite depth="8" name="Icon" atlas="ItemIconAtlas" sprite="{itemicon}" color="{itemicontint}" size="64,64" pos="35,-35" pivot="center" foregroundlayer="true"/>
 				<sprite depth="9" name="itemtypeicon" width="24" height="24" sprite="ui_game_symbol_{itemtypeicon}" pos="2,-2" foregroundlayer="true" visible="{hasitemtypeicon}" color="{itemtypeicontint}" />
 				<sprite depth="6" name="durabilityBackground" width="68" height="10" sprite="menu_empty3px" color="[black_half_alpha]" type="sliced" pos="3, -63" foregroundlayer="true" visible="{hasdurability}"/>
 				<sprite depth="7" name="durabilityBar" height="10" width="68" color="{durabilitycolor}" type="filled" fill="{durabilityfill}" pos="3, -63" visible="{hasdurability}" />
-				<label  depth="10" name="durabilityValue" pos="0,-49" width="70" height="26" text="{durabilityvalue}" font_size="26" justify="center" visible="{hasdurability}"/>
+				<label depth="5" name="textLevel" pos="56,-64" width="53" height="38" text="LEVEL" text_key="pfaltzUiLevel" color="{durabilitycolor}" font_size="20" effect="outline" justify="right" pivot="bottomright" visible="{hasdurability}"/>
+				<label depth="5" name="qualityValue" pos="58,-66" width="28" height="28" text="{durabilityvalue}" color="{durabilitycolor}" font_size="26" effect="outline" pivot="bottomleft" visible="{hasdurability}"/>
 			</rect>
 		</trader_item>
+	</append>
+
+	<set xpath="/controls/equipment_stack_sdcs/rect/sprite[@name='durabilityBackground']/@pos">0,0</set>
+	<set xpath="/controls/equipment_stack_sdcs/rect/sprite[@name='durabilityBackground']/@width">78</set>
+	<set xpath="/controls/equipment_stack_sdcs/rect/sprite[@name='durabilityBackground']/@height">78</set>
+	<set xpath="/controls/equipment_stack_sdcs/rect/filledsprite[@name='durability']/@pos">0,0</set>
+	<set xpath="/controls/equipment_stack_sdcs/rect/filledsprite[@name='durability']/@width">78</set>
+	<set xpath="/controls/equipment_stack_sdcs/rect/filledsprite[@name='durability']/@height">78</set>
+	<remove xpath="/controls/equipment_stack_sdcs/rect/label[@name='stackValue']"/>
+
+	<append xpath="/controls/equipment_stack_sdcs/rect">
+		<sprite depth="4" color="[black_alpha]" pos="3,-3" width="72" height="72" type="sliced"/>
+		<label depth="5" name="textLevel" pos="63,-78" width="55" height="28" text="LEVEL" color="[white_quarter_alpha]" text_key="pfaltzUiLevel" font_size="20" effect="outline" justify="right" pivot="bottomright"/>
+		<label depth="5" name="stackValue" pos="61,-80" width="16" height="28" color="[white_quarter_alpha]" text="" font_size="26" justify="left" effect="outline" pivot="bottomleft"/>
 	</append>
 </Config>

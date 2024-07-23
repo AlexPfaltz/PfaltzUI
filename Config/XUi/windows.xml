@@ -501,7 +501,7 @@
 				</rect>
 			</rect>
 		</window>
-		<window name="windowTrader"  width="606" height="688" panel="Left" controller="TraderWindow" cursor_area="true" >
+		<window name="windowTrader"  width="531" height="763" panel="Left" controller="TraderWindow" cursor_area="true" >
 			<panel name="header" height="43" depth="1" backgroundspritename="ui_game_panel_header">
 				<sprite pos="0,0" depth="2" name="windowIcon" size="0,0" style="icon32px" sprite="ui_game_symbol_map_trader" visible="false"/>
 				<label pos="0,0" controller="PlayerName" on_press="true" style="header.name" size="0,0" visible="false"/>
@@ -509,32 +509,32 @@
 					<category_icon />
 				</grid>
 			</panel>
-			<panel name="content" width="100%" height="653" depth="1" pos="0,-49" on_scroll="true" disableautobackground="true">
-				<sprite name="backgroundMain" sprite="menu_empty3px" pos="0,3" width="606" height="575" color="[black]" type="sliced" fillcenter="false" />
-				<rect depth="3" name="searchControls" width="600" height="44" pos="3,0">
+			<panel name="content" width="100%" height="728" depth="1" pos="0,-49" on_scroll="true" disableautobackground="true">
+				<sprite name="backgroundMain" sprite="menu_empty3px" pos="0,3" width="531" height="650" color="[black]" type="sliced" fillcenter="false" />
+				<rect depth="3" name="searchControls" width="525" height="44" pos="3,0">
 					<sprite name="backgroundMain" sprite="menu_empty3px" pos="-3,3" width="606" height="49" color="[black]" type="sliced" fillcenter="false" />
 					<sprite color="[darkGrey]" type="sliced" width="600" />
 					<button depth="4" name="collect" style="icon30px, press" pos="22,-22" sprite="ui_game_symbol_coin" pivot="center" tooltip="COLLECT" tooltip_key="btnCollect" sound="[paging_click]" visible="{isownerorrentable}" />
 					<button depth="4" name="takeAll" style="icon30px, press" pos="65,-22" sprite="ui_game_symbol_hand" pivot="center" tooltip="TAKE ALL" tooltip_key="btnTakeAll" sound="[paging_click]" visible="{isownerorrentable}" />
 					<button depth="4" name="rent" style="icon30px, press" pos="108,-22" sprite="ui_game_symbol_vending" pivot="center" tooltip="RENT" tooltip_key="lblContextActionRent" sound="[paging_click]" visible="{isrentable|once}" />
-					<button depth="4" name="showAll" style="icon30px, press, hover" pos="293,-22" sprite="ui_game_symbol_computer" defaultcolor="[disabledLabelColor]" pivot="center" tooltip_key="Show All" sound="[paging_click]" visible="{is_debug}" />
-					<panel pos="329,0" width="200" disableautobackground="true">
+					<button depth="4" name="showAll" style="icon30px, press, hover" pos="218,-22" sprite="ui_game_symbol_computer" defaultcolor="[disabledLabelColor]" pivot="center" tooltip_key="Show All" sound="[paging_click]" visible="{is_debug}" />
+					<panel pos="254,0" width="200" disableautobackground="true">
 						<sprite depth="4" name="searchIcon" style="icon30px" pos="0,-22" sprite="ui_game_symbol_search" pivot="center"/>
 						<textfield depth="5" name="searchInput" pos="22,-7" width="125" height="30" virtual_keyboard_prompt="vkPromptSearchTerm" search_field="true" close_group_on_tab="true" />
 					</panel>
-					<panel pos="491,0" width="104" height="43" disableautobackground="true">
+					<panel pos="416,0" width="104" height="43" disableautobackground="true">
 						<pager name="pager" pos="4,-6" />
 					</panel>
 				</rect>
-				<grid name="items" rows="7" cols="8" pos="3,-47" width="75" height="75" cell_width="75" cell_height="75" repeat_content="true" arrangement="horizontal" controller="TraderItemList" >
+				<grid name="items" rows="8" cols="7" pos="3,-47" width="75" height="75" cell_width="75" cell_height="75" repeat_content="true" arrangement="horizontal" controller="TraderItemList" >
 					<trader_item name="0"/>
 				</grid>
 			</panel>
-			<panel name="bottomPanel" height="43" depth="1" pos="0,-624" backgroundspritename="ui_game_panel_header">
-			<label depth="5" pos="20,-8" width="180" height="28" text="{renttimeleft}" visible="{isrenter}" />
-				<label depth="2" pos="260,-8" width="300" height="28" text="{restocklabel}: {timeleft}" justify="right" visible="{showrestock}" />
-				<label pos="552, -6" depth="2" name="availableMoney" width="64" height="32" text="{availablemoney}" font_size="32" justify="right" pivot="topright" visible="{isowner}"/>
-				<sprite pos="590, -5" depth="2" name="coinIcon" style="icon32px" sprite="ui_game_symbol_coin" pivot="topright" visible="{isowner}"/>
+			<panel name="bottomPanel" height="43" depth="1" pos="0,-699" backgroundspritename="ui_game_panel_header">
+				<label depth="5" pos="20,-8" width="180" height="28" text="{renttimeleft}" visible="{isrenter}" />
+				<label depth="2" pos="185,-8" width="300" height="28" text="{restocklabel}: {timeleft}" justify="right" visible="{showrestock}" />
+				<label pos="470, -6" depth="2" name="availableMoney" width="64" height="32" text="{availablemoney}" font_size="32" justify="right" pivot="topright" visible="{isowner}"/>
+				<sprite pos="520, -5" depth="2" name="coinIcon" style="icon32px" sprite="ui_game_symbol_coin" pivot="topright" visible="{isowner}"/>
 			</panel>
 		</window>
 		<window name="serviceInfoPanel" width="450" height="412" controller="ServiceInfoWindow" panel="Center" cursor_area="true" >
