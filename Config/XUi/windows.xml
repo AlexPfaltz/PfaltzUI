@@ -391,8 +391,8 @@
 				</grid>
 			</panel>
 			<panel name="bottomPanel" pos="0,-582" height="43" depth="1" backgroundspritename="ui_game_panel_header">
-				<label depth="2" pos="292,-12" width="80" height="28" text="{currencyamount}" justify="right" />
-				<sprite depth="4" name="costIcon" sprite="ui_game_symbol_coin" size="24,24" pos="377,-12" color="[white]" foregroundlayer="true" />
+				<label depth="2" pos="365,-12" width="200" height="28" text="{currencyamount}" justify="right" pivot="topright"/>
+				<sprite depth="4" name="costIcon" sprite="ui_game_symbol_coin" size="24,24" pos="397,-12" color="[white]" pivot="topright" foregroundlayer="true" />
 			</panel>
 		</window>
 		<window name="CharacterFrameWindow" width="676" height="616" panel="Left" controller="CharacterFrameWindow" defaultcolor="[white]" hoveredcolor="[selectedColor]" cursor_area="true" >
@@ -532,8 +532,8 @@
 			</panel>
 			<panel name="bottomPanel" height="43" depth="1" pos="0,-699" backgroundspritename="ui_game_panel_header">
 				<label depth="5" pos="20,-8" width="180" height="28" text="{renttimeleft}" visible="{isrenter}" />
-				<label depth="2" pos="185,-8" width="300" height="28" text="{restocklabel}: {timeleft}" justify="right" visible="{showrestock}" />
-				<label pos="470, -6" depth="2" name="availableMoney" width="64" height="32" text="{availablemoney}" font_size="32" justify="right" pivot="topright" visible="{isowner}"/>
+				<label depth="2" pos="521,-8" width="300" height="28" text="{restocklabel}: {timeleft}" justify="right" pivot="topright" visible="{showrestock}" />
+				<label pos="470, -6" depth="2" name="availableMoney" width="200" height="32" text="{availablemoney}" font_size="32" justify="right" pivot="topright" visible="{isowner}"/>
 				<sprite pos="520, -5" depth="2" name="coinIcon" style="icon32px" sprite="ui_game_symbol_coin" pivot="topright" visible="{isowner}"/>
 			</panel>
 		</window>
