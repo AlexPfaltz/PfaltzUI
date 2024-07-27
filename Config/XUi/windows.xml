@@ -5,8 +5,6 @@
 	<remove xpath="/windows/window[@name='emptyInfoPanel']" />
 	<remove xpath="/windows/window[@name='itemInfoPanel']"/>
 	<remove xpath="/windows/window[@name='windowBackpack']"/>
-	<remove xpath="/windows/window[@name='CharacterFrameWindow']"/>
-	<remove xpath="/windows/window[@name='ActiveBuffsWindow']"/>
 	<remove xpath="/windows/window[@name='buffInfoPanel']"/>
 	<remove xpath="/windows/window[@name='windowToolsForge']"/>
 	<remove xpath="/windows/window[@name='windowToolsCampfire']"/>
@@ -15,7 +13,8 @@
 	<remove xpath="/windows/window[@name='windowOutput']"/>
 	<remove xpath="/windows/window[@name='windowTrader']"/>
 	<remove xpath="/windows/window[@name='serviceInfoPanel']"/>
-
+	<remove xpath="/windows/window[@name='ActiveBuffsWindow']"/>
+	
     <append xpath="/windows">
 		<window name="windowCraftingQueue" width="379" height="78" panel="Left" cursor_area="true" >
 			<panel style="header.panel">
@@ -188,17 +187,16 @@
 				<sprite color="[mediumGrey]" type="sliced"/>
 			 	<rect depth="1" pos="3,-3" name="preview" width="372" height="230">
 		    		<sprite depth="2" name="backgroundMain" sprite="menu_empty3px" pos="-3,3" width="378" height="236" color="[black]" type="sliced" fillcenter="false" />
-					<sprite depth="3" name="quality" sprite="menu_empty3px" pos="0,0" color="{durabilitycolor}" type="sliced" fillcenter="true" visible="{hasdurability}" />
-					<sprite depth="4" color="[black_alpha]" pos="6,-6" width="360" height="218" type="sliced" visible="{hasdurability}"/>
-					<sprite depth="1" color="[darkGrey]" pos="0,0" type="sliced" globalopacity="true" visible="{#!hasdurability}"/>
+					<sprite depth="1" color="[darkGrey]" pos="0,0" type="sliced" globalopacity="true"/>
+					<sprite depth="13" name="clockIcon" pos="245, -12" size="32,32" sprite="ui_game_symbol_clock" type="sliced" color="[iconColor]" foregroundlayer="true" />
+					<label depth="13" name="craftingTime"  pos="280, -10" width="200" height="64" text="{craftingtime}" font_size="40" color="[beige]"/>
 			    	<sprite depth="12" name="itemPreview" width="165" height="165" atlas="ItemIconAtlas" sprite="{itemicon}" color="{itemicontint}" pos="170,-115" pivot="center" foregroundlayer="true"/>
 			    	<sprite depth="8" name="itemtypeicon" width="32" height="32" sprite="ui_game_symbol_{itemtypeicon}" pos="4,-8" foregroundlayer="true" visible="{hasitemtypeicon}" color="{itemtypeicontint}" />
-					<label depth="11" name="textLevel" pos="320,-195" width="150" height="60" text="LEVEL" text_key="pfaltzUiLevel" color="{durabilitycolor}" font_size="58" effect="outline" justify="right" pivot="bottomright" visible="{hasdurability}"/>
-					<label depth="11" name="qualityValue" pos="330,-197" width="68" height="68" text="{durabilitytext}" color="{durabilitycolor}" font_size="68" effect="outline" pivot="bottomleft" visible="{hasdurability}"/>
-					<sprite depth="5" name="clockIcon" size="32,32" sprite="ui_game_symbol_clock" pos="245, -187" type="sliced" color="[iconColor]" foregroundlayer="true" />
-					<label depth="5" name="craftingTime" width="200" height="64" pos="280, -185" text="{craftingtime}" font_size="40" color="[beige]"/>
-					<button depth="12" name="addQualityButton" style="icon32px, press" pos="359,-107" sprite="ui_game_symbol_arrow_menu" flip="Horizontally" pivot="center" sound="[paging_click]" visible="{hasdurability}" disabledcolor="[lightGrey]" enabled="{enableaddquality}" />
-					<button depth="12" name="subtractQualityButton" style="icon32px, press" pos="15,-107" sprite="ui_game_symbol_arrow_menu" pivot="center" sound="[paging_click]" visible="{hasdurability}" disabledcolor="[lightGrey]" enabled="{enablesubtractquality}" />
+					<sprite depth="5" name="durabilityBackground" pos="40, -197" width="294" height="20" color="48,48,48,255" type="sliced" visible="{hasdurability}"/>
+			    	<filledsprite depth="6" name="durabilityBar" pos="40, -197" width="294" height="20" color="{durabilitycolor}" type="filled" fill="{durabilityfill}" visible="{hasdurability}" />
+					<label depth="13" name="durabilityValue" pos="30,-170" width="314" height="42" text="{durabilitytext}" font_size="40" justify="{durabilityjustify}" effect="outline" visible="{hasdurability}"/>
+					<button depth="13" name="subtractQualityButton" style="icon32px, press" pos="18,-207" sprite="ui_game_symbol_arrow_menu" pivot="center" sound="[paging_click]" visible="{hasdurability}" disabledcolor="[lightGrey]" enabled="{enablesubtractquality}" />
+					<button depth="13" name="addQualityButton" style="icon32px, press" pos="356,-207" sprite="ui_game_symbol_arrow_menu" flip="Horizontally" pivot="center" sound="[paging_click]" visible="{hasdurability}" disabledcolor="[lightGrey]" enabled="{enableaddquality}" />
 				</rect>
 				<rect depth="4" pos="375,0" width="62" >
 					<sprite depth="2" name="backgroundMain" sprite="menu_empty3px" pos="0,0" width="62" color="[black]" type="sliced" fillcenter="false" />
@@ -268,18 +266,15 @@
 				<sprite color="[mediumGrey]" type="sliced" />
 			    <label depth="6" pos="334,-4" width="200" height="46" text="{itemcost}{markup}" font_size="46" pivot="topright" justify="right" />
 			    <sprite depth="6" name="costIcon" sprite="ui_game_symbol_coin" size="32,32" pos="336,-6" color="[white]" foregroundlayer="true" />
-			    <rect depth="1" pos="3,-3" name="preview" width="372" height="230">
-		    		<sprite depth="2" name="backgroundMain" sprite="menu_empty3px" pos="-3,3" width="378" height="236" color="[black]" type="sliced" fillcenter="false" />
-					<sprite depth="3" name="quality" sprite="menu_empty3px" pos="0,0" color="{durabilitycolor}" type="sliced" fillcenter="true" visible="{hasdurability}" />
-					<sprite depth="4" color="[black_alpha]" pos="6,-6" width="360" height="218" type="sliced" visible="{hasdurability}"/>
-					<sprite depth="1" color="[darkGrey]" pos="0,0" type="sliced" globalopacity="true" visible="{#!hasdurability}"/>
-			    	<sprite depth="12" name="itemPreview" width="165" height="165" atlas="ItemIconAtlas" sprite="{itemicon}" color="{itemicontint}" pos="170,-115" pivot="center" foregroundlayer="true"/>
-			   		<sprite depth="8" name="itemtypeicon" width="32" height="32" sprite="ui_game_symbol_{itemtypeicon}" pos="4,-8" foregroundlayer="true" visible="{hasitemtypeicon}" color="{itemtypeicontint}" />
-			    	<sprite depth="5" name="durabilityBackground" height="20" width="314" color="48,48,48,255" type="sliced" pos="30, -197" visible="{hasdurability}"/>
-			    	<filledsprite depth="6" name="durabilityBar" height="20" width="314" color="{durabilitycolor}" type="filled" pos="30, -197" fill="{durabilityfill}" visible="{hasdurability}" />
-					<label name="durabilityValue" depth="12" pos="162,-185" width="200" height="52" text="{durabilitytext}" font_size="40" justify="{durabilityjustify}" color="[white]" visible="{#!hasdurability}" />
-			    	<label depth="11" name="textLevel" pos="320,-200" width="150" height="60" text="LEVEL" text_key="pfaltzUiLevel" color="{durabilitycolor}" font_size="58" effect="outline" justify="right" pivot="bottomright" visible="{hasdurability}"/>
-					<label depth="11" name="qualityValue" pos="330,-202" width="68" height="68" text="{durabilitytext}" color="{durabilitycolor}" font_size="68" effect="outline" pivot="bottomleft" visible="{hasdurability}"/>
+			    <rect depth="1" name="preview" pos="3,-3" width="372" height="230">
+		    		<sprite depth="2" name="backgroundMain" pos="-3,3" width="378" height="236" sprite="menu_empty3px"  color="[black]" type="sliced" fillcenter="false" />
+					<sprite depth="1" color="[darkGrey]" pos="0,0" type="sliced" globalopacity="true" />
+			    	<sprite depth="12" name="itemPreview" pos="170,-115" width="165" height="165" atlas="ItemIconAtlas" sprite="{itemicon}" color="{itemicontint}" pivot="center" foregroundlayer="true"/>
+			   		<sprite depth="8" name="itemtypeicon" pos="4,-8" width="32" height="32" sprite="ui_game_symbol_{itemtypeicon}" foregroundlayer="true" visible="{hasitemtypeicon}" color="{itemtypeicontint}" />
+			    	<sprite depth="5" name="durabilityBackground" pos="40, -197" width="294" height="20" color="48,48,48,255" type="sliced" visible="{hasdurability}"/>
+			    	<filledsprite depth="6" name="durabilityBar" pos="40, -197" width="294" height="20" color="{durabilitycolor}" type="filled" fill="{durabilityfill}" visible="{hasdurability}" />
+					<label depth="13" name="durabilityValue" pos="30,-170" width="314" height="42" text="{durabilitytext}" font_size="40" justify="{durabilityjustify}" effect="outline" visible="{hasdurability}"/>
+					<label depth="13" name="itemCount" pos="162,-185" width="200" height="52" text="{durabilitytext}" font_size="40" justify="{durabilityjustify}" color="[white]" visible="{#!hasdurability}" />
 				</rect>
 			    <rect depth="4" pos="375,0" width="62" height="540">
 					<sprite depth="2" name="backgroundMain" sprite="menu_empty3px" pos="0,0" width="62" height="543" color="[black]" type="sliced" fillcenter="false" />
@@ -395,84 +390,6 @@
 				<sprite depth="4" name="costIcon" sprite="ui_game_symbol_coin" size="24,24" pos="397,-12" color="[white]" pivot="topright" foregroundlayer="true" />
 			</panel>
 		</window>
-		<window name="CharacterFrameWindow" width="676" height="616" panel="Left" controller="CharacterFrameWindow" defaultcolor="[white]" hoveredcolor="[selectedColor]" cursor_area="true" >
-			<panel name="header" height="43" depth="1" backgroundspritename="ui_game_panel_header">
-				<sprite depth="2" name="windowIcon" style="icon32px" pos="5,-5" sprite="ui_game_symbol_character"/>
-				<label depth="2" name="characterName" pos="42,-6" width="150" height="32" text="" font_size="32" />
-				<sprite depth="2" name="windowIcon" width="26" height="26" pos="323,-8" sprite="ui_game_symbol_trophy" />
-				<label depth="2" name="levelNumber" pos="363,-6" width="220" height="32" text="" />
-				<button depth="4" name="statButton" style="icon30px, press" pos="596,-10" sprite="ui_game_symbol_ping" tooltip="Stats" sound="[paging_click]" tooltip_key="lblCharacterStats1" selected="true"/>
-				<button depth="4" name="coreStatButton" style="icon30px, press" pos="636,-10" sprite="ui_game_symbol_trophy" tooltip="Stats" sound="[paging_click]" tooltip_key="lblCharacterStats2" />
-			</panel>
-			<panel name="previewFrameSDCS" depth="0" pos="0,-46" width="327" on_press="true" on_hover="true" disableautobackground="true" snap="false" gamepad_selectable="false">
-				<rect>
-					<sprite depth="6" name="backgroundMain" sprite="menu_empty3px" pos="0,0" width="327" height="495" color="[black]" type="sliced" fillcenter="false" />
-					<sprite depth="1" color="[darkGrey]" type="sliced" width="327" height="495"/>
-					<texture depth="2" name="playerPreviewSDCS" material="Materials/Transparent Colored" size="327,493" globalopacity="false"/>
-				</rect>
-			</panel>
-			<panel name="equipment" depth="10" pos="3, -539" width="292" height="70" disableautobackground="true" >
-				<grid name="inventory" rows="1" cols="4" cell_width="81" cell_height="70" controller="EquipmentStackGrid" repeat_content="true">
-					<equipment_stack_sdcs name="0"/>
-				</grid>
-			</panel>
-			<grid visible="{#!showcore}" depth="0" pos="323,-46" width="353" cols="1" cell_height="30" repeat_content="false" arrangement="vertical">
-				<player_stats_entry backgroundcolor="[darkestGrey]" textcontent="{playerhealthtitle|once}" valuecontent="{playerhealth}/{playermaxhealth}" />
-				<player_stats_entry backgroundcolor="[darkGrey]"    textcontent="{playerstaminatitle|once}" valuecontent="{playerstamina}/{playermaxstamina}" />
-				<player_stats_entry backgroundcolor="[darkestGrey]" textcontent="{playerfoodtitle|once}" valuecontent="{playermodifiedcurrentfood}/{playerfoodmax}" />
-				<player_stats_entry backgroundcolor="[darkGrey]"    textcontent="{playerwatertitle|once}" valuecontent="{playermodifiedcurrentwater}/{playerwatermax}" />
-				<player_stats_entry backgroundcolor="[darkestGrey]" textcontent="{playercoretemptitle|once}" valuecontent="{playercoretemp}" />
-				<player_stats_entry backgroundcolor="[darkGrey]"    textcontent="{playerzombiekillstitle|once}" valuecontent="{playerzombiekills}" />
-				<player_stats_entry backgroundcolor="[darkestGrey]" textcontent="{playerpvpkillstitle|once}" valuecontent="{playerpvpkills}" />
-				<player_stats_entry backgroundcolor="[darkGrey]"    textcontent="{playerdeathstitle|once}" valuecontent="{playerdeaths}" />
-				<player_stats_entry backgroundcolor="[darkestGrey]" textcontent="{playertravelledtitle|once}" valuecontent="{playertravelled}" />
-				<player_stats_entry backgroundcolor="[darkGrey]"    textcontent="{playeritemscraftedtitle|once}" valuecontent="{playeritemscrafted}" />
-				<player_stats_entry backgroundcolor="[darkestGrey]" textcontent="{playerlongestlifetitle|once}" valuecontent="{playerlongestlife}" />
-				<player_stats_entry backgroundcolor="[darkGrey]"    textcontent="{playercurrentlifetitle|once}" valuecontent="{playercurrentlife}" />
-				<player_stats_entry backgroundcolor="[darkestGrey]" textcontent="{playerxptonextleveltitle|once}" valuecontent="{playerxptonextlevel}" />
-				<player_stats_entry backgroundcolor="[darkGrey]"    textcontent="{playerlootstagetitle|once}" valuecontent="{playerlootstage}" />
-				<player_stats_entry backgroundcolor="[darkestGrey]" textcontent="" valuecontent="" />
-				<player_stats_entry backgroundcolor="[darkGrey]"    textcontent="" valuecontent="" />
-				<player_stats_entry backgroundcolor="[darkestGrey]" textcontent="" valuecontent="" />
-				<player_stats_entry backgroundcolor="[darkGrey]"    textcontent="" valuecontent="" />
-				<player_stats_entry backgroundcolor="[darkestGrey]" textcontent="" valuecontent="" />
-			</grid>
-			<grid visible="{showcore}" depth="0" pos="323,-46" width="353" cols="1" cell_height="30" repeat_content="false" arrangement="vertical">
-				<player_stats_generic_entry backgroundcolor="[darkestGrey]" index="1" />
-				<player_stats_generic_entry backgroundcolor="[darkGrey]"    index="2" />
-				<player_stats_generic_entry backgroundcolor="[darkestGrey]" index="3" />
-				<player_stats_generic_entry backgroundcolor="[darkGrey]"    index="4" />
-				<player_stats_generic_entry backgroundcolor="[darkestGrey]" index="5" />
-				<player_stats_generic_entry backgroundcolor="[darkGrey]"    index="6" />
-				<player_stats_generic_entry backgroundcolor="[darkestGrey]" index="7" />
-				<player_stats_generic_entry backgroundcolor="[darkGrey]"    index="8" />
-				<player_stats_generic_entry backgroundcolor="[darkestGrey]" index="9" />
-				<player_stats_generic_entry backgroundcolor="[darkGrey]"    index="10" />
-				<player_stats_generic_entry backgroundcolor="[darkestGrey]" index="11" />
-				<player_stats_generic_entry backgroundcolor="[darkGrey]"    index="12" />
-				<player_stats_generic_entry backgroundcolor="[darkestGrey]" index="13" />
-				<player_stats_generic_entry backgroundcolor="[darkGrey]"    index="14" />
-				<player_stats_generic_entry backgroundcolor="[darkestGrey]" index="15" />
-				<player_stats_generic_entry backgroundcolor="[darkGrey]"    index="16" />
-				<player_stats_generic_entry backgroundcolor="[darkestGrey]" index="17" />
-				<player_stats_generic_entry backgroundcolor="[darkGrey]"    index="18" />
-				<player_stats_generic_entry backgroundcolor="[darkestGrey]" index="19" />
-			</grid>
-		</window>
-		<window name="ActiveBuffsWindow" width="630" height="113" panel="Left" cursor_area="true" >
-			<panel name="header" height="43" depth="1" backgroundspritename="ui_game_panel_header">
-				<sprite depth="2" name="windowIcon" style="icon32px" pos="5,-5" sprite="ui_game_symbol_medical"/>
-				<label depth="2" name="characterName" pos="42,-6" width="250" height="32" text="ACTIVE BUFFS" text_key="xuiActiveBuffs" font_size="32"/>
-				<panel pos="520,0" height="43" disableautobackground="true">
-					<pager name="pager" pos="4,-6"  contents_parent="content"/>
-				</panel>
-			</panel>
-			<panel name="content" depth="0" pos="0,-46" disableautobackground="true">
-				<grid depth="10" name="buffs" rows="1" cols="9" pos="3,0" cell_width="70" cell_height="70" repeat_content="true" controller="ActiveBuffList">
-					<active_buff_entry />
-				</grid>
-			</panel>
-		</window>
 		<window name="buffInfoPanel" width="450" height="426" controller="BuffInfoWindow" anchor="CenterTop" panel="Center">
 			<panel name="header" height="43" depth="1" backgroundspritename="ui_game_panel_header">
 				<sprite depth="2" name="windowIcon" style="icon32px" pos="4,-5" sprite="{bufficon|once}"/>
@@ -512,8 +429,8 @@
 			<panel name="content" width="100%" height="728" depth="1" pos="0,-49" on_scroll="true" disableautobackground="true">
 				<sprite name="backgroundMain" sprite="menu_empty3px" pos="0,3" width="531" height="650" color="[black]" type="sliced" fillcenter="false" />
 				<rect depth="3" name="searchControls" width="525" height="44" pos="3,0">
-					<sprite name="backgroundMain" sprite="menu_empty3px" pos="-3,3" width="606" height="49" color="[black]" type="sliced" fillcenter="false" />
-					<sprite color="[darkGrey]" type="sliced" width="600" />
+					<sprite depth="2" name="backgroundMain" sprite="menu_empty3px" pos="-3,3" width="531" height="49" color="[black]" type="sliced" fillcenter="false" />
+					<sprite depth="1" color="[darkGrey]" type="sliced" width="525" />
 					<button depth="4" name="collect" style="icon30px, press" pos="22,-22" sprite="ui_game_symbol_coin" pivot="center" tooltip="COLLECT" tooltip_key="btnCollect" sound="[paging_click]" visible="{isownerorrentable}" />
 					<button depth="4" name="takeAll" style="icon30px, press" pos="65,-22" sprite="ui_game_symbol_hand" pivot="center" tooltip="TAKE ALL" tooltip_key="btnTakeAll" sound="[paging_click]" visible="{isownerorrentable}" />
 					<button depth="4" name="rent" style="icon30px, press" pos="108,-22" sprite="ui_game_symbol_vending" pivot="center" tooltip="RENT" tooltip_key="lblContextActionRent" sound="[paging_click]" visible="{isrentable|once}" />
@@ -567,6 +484,27 @@
 				</rect>
 			</rect>
 		</window>
+		<window name="ActiveBuffsWindow" width="82" height="725" panel="Left" cursor_area="true" >
+			<rect pos="332,713">
+				<panel name="header" height="43" depth="1" backgroundspritename="ui_game_panel_header">
+					<label depth="2" name="characterName" pos="0,-5" width="82" height="32" text="BUFFS" text_key="xuiBuffs" font_size="28" justify="center"/>
+				</panel>
+				<panel name="content" depth="0" pos="0,-46" disableautobackground="true">
+					<rect height="43">
+						<sprite depth="8" name="backgroundMain" pos="0,0" sprite="menu_empty3px" color="[black]" type="sliced" fillcenter="false" />
+						<sprite color="[mediumGrey]" type="sliced" />
+						<panel pos="0,0" height="43" disableautobackground="true">
+							<small_pager name="pager" pos="0,-5"  contents_parent="content"/>
+						</panel>
+					</rect>
+					<grid depth="10" name="buffs" rows="9" cols="1" pos="3,-43" cell_width="75" cell_height="77" repeat_content="true" controller="ActiveBuffList">
+						<active_buff_entry />
+					</grid>
+				</panel>
+			</rect>
+		</window>
     </append>
 	<set xpath="//window[@name='windowDewCollectorMods']/@panel">Left</set>
+	<set xpath="//window[@name='CharacterFrameWindow']/@width">410</set>
+	<setattribute xpath="//window[@name='CharacterFrameWindow']/panel[@name='header']" name="width">327</setattribute>
 </Config>

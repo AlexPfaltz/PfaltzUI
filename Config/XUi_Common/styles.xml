@@ -1,5 +1,0 @@
-<Config>
-    <append xpath="/styles/global">
-        <style_entry name="black_alpha" value="0,0,0,240"/>
-    </append>
-</Config>

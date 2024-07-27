@@ -1,4 +1,5 @@
 Key,File,Type,UsedInMainMenu,NoTranslate,english,Context / Alternate Text,german,spanish,french,italian,japanese,koreana,polish,brazilian,russian,turkish,schinese,tchinese
 xuiCraftingQueue,UI,XUI,,x,Crafting Queue,,Bastelwarteschlange,Cola de Elaboración,"File d'Attente d'Artisanat",Coda di crafting,"クラフトキュー","크래프팅 큐","Kolejka Rzemieślnicza",Fila De Criação,Очередь крафта,Hazırlama Sırası,"制作队列","制作队列"
-xuiActiveBuffs,UI,XUI,,x,Active Buffs,,Aktive Stärkungszauber,Potenciadores Activos,Buffs Actifs,Appassionati attivi,"アクティブバフ","활성 버프",Aktywne Wzmocnienia,Buffs Ativos,Активные баффы,Aktif Meraklıları,"活跃爱好者","活跃爱好者"
+xuiBuffs,UI,XUI,,x,Buffs,,Buffs,Potenciadores,Buffs,Fanatico,"バフ","버프",Buffy,Buffs,Баффы,Meraklıları,"发烧友","发烧友"
 pfaltzUiLevel,UI,XUI,,,"level:",,"level:","nivel:","niveau:","livello:","レベル:","레벨:","poziom:","nível:","уровень:","seviye:","等级:","等級:"
+xuiRestock,UI,Menu,,,Restock,,Wiederauffüllen,Reposición,Réapprovisionnement,Fai rifornimento,補充,재고 보충,Uzupełnienie asortymentu,Reabastecer,Обновление запасов,Stok Doldur,补货,補貨

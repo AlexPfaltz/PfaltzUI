@@ -1,50 +1,26 @@
 <Config>
-    <set xpath="//window_group[@name='character']">
-		<window name="CharacterFrameWindow"/>
-		<window name="buffInfoPanel"/>
-		<window name="ActiveBuffsWindow" />
-    </set>
-	 <set xpath="//window_group[@name='workstation_campfire']">
-		<window name="windowCraftingListWorkstation"/>
-		<window name="craftingInfoPanel"/>
-		<window name="windowCraftingQueue"/>
-		<window name="windowToolsCampfire" />
-		<window name="windowFuel" />
-		<window name="windowOutput" />
-		<window name="windowNonPagingHeader" />
-	</set>
-	<set xpath="//window_group[@name='workstation_forge']">
-		<window name="windowCraftingListWorkstation"/>
-		<window name="craftingInfoPanel"/>
-		<window name="windowCraftingQueue"/>
-		<window name="windowToolsForge" />
-		<window name="windowFuel" />
-		<window name="windowForgeInput" />
-		<window name="windowOutput" />
-		<window name="windowNonPagingHeader" />
-	</set>
-	<set xpath="//window_group[@name='workstation_cementMixer']">
-		<window name="windowCraftingListWorkstation"/>
-		<window name="craftingInfoPanel"/>
-		<window name="windowCraftingQueue"/>
-		<window name="windowOutput" />
-		<window name="windowNonPagingHeader" />
-	</set>	
-	<set xpath="//window_group[@name='workstation_workbench']">
-		<window name="windowCraftingListWorkstation"/>
-		<window name="craftingInfoPanel"/>
-		<window name="windowCraftingQueue"/>
-		<window name="windowOutput" />
-		<window name="windowNonPagingHeader" />
-	</set>		
-	<set xpath="//window_group[@name='workstation_chemistryStation']">
-		<window name="windowCraftingListWorkstation"/>
-		<window name="craftingInfoPanel"/>
-		<window name="windowCraftingQueue"/>
-		<window name="windowFuel" />
-		<window name="windowOutput" />
-		<window name="windowNonPagingHeader" />
-	</set>
+    <remove xpath="//window_group[@name='workstation_campfire']/window[@name='windowCraftingList']"/>
+	<remove xpath="//window_group[@name='workstation_forge']/window[@name='windowCraftingList']"/>
+	<remove xpath="//window_group[@name='workstation_cementMixer']/window[@name='windowCraftingList']"/>
+	<remove xpath="//window_group[@name='workstation_workbench']/window[@name='windowCraftingList']"/>
+	<remove xpath="//window_group[@name='workstation_chemistryStation']/window[@name='windowCraftingList']"/>
+
+	<insertBefore xpath="//window_group[@name='workstation_campfire']/window[@name='craftingInfoPanel']">
+  		<window name="windowCraftingListWorkstation"/>
+	</insertBefore>
+	<insertBefore xpath="//window_group[@name='workstation_forge']/window[@name='craftingInfoPanel']">
+  		<window name="windowCraftingListWorkstation"/>
+	</insertBefore>
+	<insertBefore xpath="//window_group[@name='workstation_cementMixer']/window[@name='craftingInfoPanel']">
+  		<window name="windowCraftingListWorkstation"/>
+	</insertBefore>
+	<insertBefore xpath="//window_group[@name='workstation_workbench']/window[@name='craftingInfoPanel']">
+  		<window name="windowCraftingListWorkstation"/>
+	</insertBefore>
+	<insertBefore xpath="//window_group[@name='workstation_chemistryStation']/window[@name='craftingInfoPanel']">
+  		<window name="windowCraftingListWorkstation"/>
+	</insertBefore>
+		
 	<set xpath="//window_group[@name='dewcollector']">
 		<window name="windowDewCollectorMods" />
 		<window name="windowDewCollector"/>
