@@ -22,7 +22,7 @@
 				<sprite depth="1" name="background" color="[mediumGrey]" type="sliced" on_press="true" on_hover="true" width="62" sound_play_on_hover="[default_hover]"/>
 				<sprite depth="4" name="Icon" sprite="{actionicon}" size="24,24" color="{statuscolor}" pos="31,-12" pivot="center" foregroundlayer="true"/>
 				<label depth="4" name="Name" pos="0,0" width="0" height="0" text="{actionname}" font_size="1" color="{statuscolor}" effect="shadow" pivot="left" />
-				<gamepad_icon depth="4" name="gamepadIcon" pos="31,-44" pivot="center" />
+				<gamepad_icon depth="4" name="gamepadIcon" pos="31,-44" size="32,32" pivot="center" />
 				<label depth="4" name="keyboardButton" pos="31,-44" width="62" height="26" text="&lt;W&gt;" font_size="26" color="{statuscolor}" effect="shadow" pivot="center" justify="center" />
 			</rect>
 		</item_action_entry>

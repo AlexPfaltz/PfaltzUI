@@ -177,7 +177,7 @@
 			<panel name="header" height="43" depth="1" backgroundspritename="ui_game_panel_header">
 				<sprite depth="2" name="windowIcon" style="icon32px" pos="4,-5" sprite="{itemgroupicon}"/>
 				<label style="header.name" text="{itemname}" />
-				<rect pos="350,0" name="requiredToolOverlay">
+				<rect pos="192,0" name="requiredToolOverlay">
 					<sprite size="24,24" depth="2" name="requiredToolCheckmark" pos="0,-8" sprite="ui_game_symbol_check" color="[red]"/>
 					<label depth="2" pos="35,-8" name="requiredToolText" width="200" height="32" text="Required" text_key="xuiRequired" font_size="32" upper_case="true" justify="left"/>
 				</rect>
@@ -190,7 +190,7 @@
 					<sprite depth="1" color="[darkGrey]" pos="0,0" type="sliced" globalopacity="true"/>
 					<sprite depth="13" name="clockIcon" pos="245, -12" size="32,32" sprite="ui_game_symbol_clock" type="sliced" color="[iconColor]" foregroundlayer="true" />
 					<label depth="13" name="craftingTime"  pos="280, -10" width="200" height="64" text="{craftingtime}" font_size="40" color="[beige]"/>
-			    	<sprite depth="12" name="itemPreview" width="165" height="165" atlas="ItemIconAtlas" sprite="{itemicon}" color="{itemicontint}" pos="170,-115" pivot="center" foregroundlayer="true"/>
+			    	<sprite depth="12" name="itemPreview" width="200" height="200" atlas="ItemIconAtlas" sprite="{itemicon}" color="{itemicontint}" pos="170,-115" pivot="center" foregroundlayer="true"/>
 			    	<sprite depth="8" name="itemtypeicon" width="32" height="32" sprite="ui_game_symbol_{itemtypeicon}" pos="4,-8" foregroundlayer="true" visible="{hasitemtypeicon}" color="{itemtypeicontint}" />
 					<sprite depth="5" name="durabilityBackground" pos="40, -197" width="294" height="20" color="48,48,48,255" type="sliced" visible="{hasdurability}"/>
 			    	<filledsprite depth="6" name="durabilityBar" pos="40, -197" width="294" height="20" color="{durabilitycolor}" type="filled" fill="{durabilityfill}" visible="{hasdurability}" />
@@ -269,7 +269,7 @@
 			    <rect depth="1" name="preview" pos="3,-3" width="372" height="230">
 		    		<sprite depth="2" name="backgroundMain" pos="-3,3" width="378" height="236" sprite="menu_empty3px"  color="[black]" type="sliced" fillcenter="false" />
 					<sprite depth="1" color="[darkGrey]" pos="0,0" type="sliced" globalopacity="true" />
-			    	<sprite depth="12" name="itemPreview" pos="170,-115" width="165" height="165" atlas="ItemIconAtlas" sprite="{itemicon}" color="{itemicontint}" pivot="center" foregroundlayer="true"/>
+			    	<sprite depth="12" name="itemPreview" pos="170,-115" width="200" height="200" atlas="ItemIconAtlas" sprite="{itemicon}" color="{itemicontint}" pivot="center" foregroundlayer="true"/>
 			   		<sprite depth="8" name="itemtypeicon" pos="4,-8" width="32" height="32" sprite="ui_game_symbol_{itemtypeicon}" foregroundlayer="true" visible="{hasitemtypeicon}" color="{itemtypeicontint}" />
 			    	<sprite depth="5" name="durabilityBackground" pos="40, -197" width="294" height="20" color="48,48,48,255" type="sliced" visible="{hasdurability}"/>
 			    	<filledsprite depth="6" name="durabilityBar" pos="40, -197" width="294" height="20" color="{durabilitycolor}" type="filled" fill="{durabilityfill}" visible="{hasdurability}" />
