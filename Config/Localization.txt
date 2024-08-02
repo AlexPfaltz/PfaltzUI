@@ -3,3 +3,5 @@ xuiCraftingQueue,UI,XUI,,x,Crafting Queue,,Bastelwarteschlange,Cola de Elaboraci
 xuiBuffs,UI,XUI,,x,Buffs,,Buffs,Potenciadores,Buffs,Fanatico,"バフ","버프",Buffy,Buffs,Баффы,Meraklıları,"发烧友","发烧友"
 pfaltzUiLevel,UI,XUI,,,"level:",,"level:","nivel:","niveau:","livello:","レベル:","레벨:","poziom:","nível:","уровень:","seviye:","等级:","等級:"
 xuiRestock,UI,Menu,,,Restock,,Wiederauffüllen,Reposición,Réapprovisionnement,Fai rifornimento,補充,재고 보충,Uzupełnienie asortymentu,Reabastecer,Обновление запасов,Stok Doldur,补货,補貨
+xuiIngredients,UI,XUI,,,"Ingredients",,Zutat,Ingredientes,Ingrédients,Ingrediente,成分,성분,Składniki,Ingredientes,Ингридиенты,Malzemeler,配料表,配料表
+xuiUnlockBy,UI,XUI,,,Unlock,,Entsperren,Desbloquear,Déverrouiller,Sbloccare,ロック解除,잠금 해제,Unlock,Desbloquear,Разблокировать,"Kilidi açmak","解锁","解锁"
