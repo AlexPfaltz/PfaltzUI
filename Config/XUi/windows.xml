@@ -445,16 +445,16 @@
 				<sprite pos="520, -5" depth="2" name="coinIcon" style="icon32px" sprite="ui_game_symbol_coin" pivot="topright" visible="{isowner}"/>
 			</panel>
 		</window>
-		<window name="serviceInfoPanel" width="450" height="412" controller="ServiceInfoWindow" panel="Center" cursor_area="true" >
+		<window name="serviceInfoPanel" width="436" height="726" controller="ServiceInfoWindow" panel="Center" cursor_area="true" >
 			<panel name="header" height="43" depth="1" backgroundspritename="ui_game_panel_header">
 				<sprite depth="2" name="windowIcon" style="icon32px" pos="4,-5" sprite="{servicegroupicon}"/>
 				<label depth="2" name="windowName" pos="39,-6" width="347" height="32" text="{servicename}" font_size="32" />
 			</panel>
-			<rect name="contentInfo" height="366" depth="1" pos="0,-46" >
+			<rect name="contentInfo" height="680" depth="1" pos="0,-46" >
 				<rect depth="1" pos="3,0" name="preview" width="147" height="150">
 					<sprite depth="2" name="servicePreview" width="0" height="0" atlas="UIAtlas" sprite="{serviceicon}" color="{serviceicontint}" pos="0,0" foregroundlayer="true"/>
 				</rect>
-				<rect depth="4" pos="388,0" width="62">
+				<rect depth="4" pos="374,0" width="62">
 					<sprite depth="2" name="backgroundMain" sprite="menu_empty3px" pos="0,0" width="62" color="[black]" type="sliced" fillcenter="false" />
 				   	<sprite color="[mediumGrey]" type="sliced" />
 				    <rect pos="0,0" width="62" height="100%" visible="{shownormaloptions}" >
@@ -463,15 +463,23 @@
 					    </grid>
 				    </rect>
 				</rect>
-				<rect depth="1" pos="0,0" name="description" width="388" height="198">
+				<panel depth="1" name="header" pos="0,0" width="374" height="43">
+					<sprite depth="8" sprite="menu_empty3px" pos="0,0" width="377" color="[black]" type="sliced" fillcenter="false" />
+					<label depth="1" pos="0,-22" font_size="32" text="STATS" text_key="xuiStats" pivot="left" justify="center" color="[white]" />
+				</panel>
+				<rect depth="1" pos="0,-43" name="description" width="374" height="198">
 					<sprite depth="1" color="[mediumGrey]" type="sliced" globalopacity="true" />
-					<sprite depth="3" name="backgroundMain" sprite="menu_empty3px" pos="0,0" width="391" height="201" color="[black]" type="sliced" fillcenter="false" />
-					<label depth="3" name="statText" pos="6,-2" width="254" height="100%" text="{servicestats}" />
+					<sprite depth="3" name="backgroundMain" sprite="menu_empty3px" pos="0,0" width="377" height="201" color="[black]" type="sliced" fillcenter="false" />
+					<label depth="3" name="statText" pos="10,-10" width="354" height="100%" text="{servicestats}" />
 				</rect>
-				<rect depth="2" pos="0,-200" name="description" width="388" height="163">
+				<panel depth="1" name="header" pos="0,-241" width="374" height="43">
+					<sprite depth="8" sprite="menu_empty3px" pos="0,0" width="377" color="[black]" type="sliced" fillcenter="false" />
+					<label depth="1" pos="0,-22" font_size="32" text="DESCRIPTION" text_key="xuiDescriptionLabel" pivot="left" justify="center" color="[white]" />
+				</panel>
+				<rect depth="2" pos="0,-284" name="description" width="388" height="396">
 					<sprite depth="1" color="[darkGrey]" type="sliced" globalopacity="true" />
-					<sprite depth="5" name="backgroundMain" sprite="menu_empty3px" pos="0,3" width="391" height="168" color="[black]" type="sliced" fillcenter="false" />
-					<label depth="3" name="descriptionText" pos="6,-5" text="{servicedescription}"  width="388" height="157" />
+					<sprite depth="5" name="backgroundMain" sprite="menu_empty3px" pos="0,3" width="377" height="401" color="[black]" type="sliced" fillcenter="false" />
+					<label depth="3" name="descriptionText" pos="10,-10" text="{servicedescription}"  width="354" height="376" />
 				</rect>
 			</rect>
 		</window>
