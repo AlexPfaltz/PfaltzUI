@@ -18,7 +18,7 @@
 			</rect>
 		</recipe_entry>
 		<item_action_entry>
-			<rect height="70" style="press, hover" controller="ItemActionEntry" disabled_font_color="[disabledLabelColor]" default_font_color="[labelColor]" default_background_color="[mediumGrey]" tooltip="{actionname}">
+			<rect height="70" style="press, hover" controller="ItemActionEntry" disabled_font_color="[disabledLabelColor]" default_font_color="[labelColor]" tooltip="{actionname}">
 				<sprite depth="1" name="background" color="[mediumGrey]" type="sliced" on_press="true" on_hover="true" width="62" sound_play_on_hover="[default_hover]"/>
 				<sprite depth="4" name="Icon" sprite="{actionicon}" size="24,24" color="{statuscolor}" pos="31,-12" pivot="center" foregroundlayer="true"/>
 				<label depth="4" name="Name" pos="0,0" width="0" height="0" text="" font_size="1" color="{statuscolor}" pivot="left" />
@@ -55,7 +55,7 @@
 			</rect>
 		</trader_item>
 		<active_buff_entry>
-			<panel controller="ActiveBuffEntry" style="press, hover, scroll" sound="[recipe_click]" disableautobackground="true" sound_play_on_hover="[default_hover]">
+			<panel controller="ActiveBuffEntry" width="77" height="77" style="press, hover, scroll" sound="[recipe_click]" disableautobackground="true" sound_play_on_hover="[default_hover]">
 				<sprite depth="2" name="backgroundMain" sprite="menu_empty3px" pos="-3,3" width="82" height="82" color="[black]" type="sliced" fillcenter="false" />
 				<sprite depth="0" name="background" color="[darkGrey]" type="sliced" width="77" height="77" pos="0,0" />
 				<label depth="3" pos="0,0" width="77" height="20" text="{buffname|once}" font_size="28" color="{fontcolor}" justify="Center"/>
