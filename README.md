@@ -7,6 +7,6 @@ The peculiarity of this user interface mod is the vertical windows, the followin
   <img src="Screenshots/logo.png" width="1000" title="Logo">
   <img src="Screenshots/common.png" width="1000" title="Screenshot">
   <img src="Screenshots/stations.gif" width="1000" title="Stations windows">
-  <img src="Screenshots/trader.png" width="593" title="Trader window">
-  <img src="Screenshots/character.png" width="470" title="Character and buff windows"><img src="Screenshots/craft\info\buff panel.gif" width="491" title="craft\info\buff panel">
+  <img src="Screenshots/character.png" width="470" title="Character and buff windows"><img src="Screenshots/craft%5Cinfo%5Cbuff%20panel.gif" width="491" title="craft\info\buff panel">
+   <img src="Screenshots/trader.png" width="593" title="Trader window">
 </p>
