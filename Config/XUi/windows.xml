@@ -197,50 +197,47 @@
 				</rect>
 				<rect depth="4" pos="375,0" width="62" height="680">
 					<sprite depth="2" name="backgroundMain" sprite="menu_empty3px" pos="0,0" width="62" height="680" color="[black]" type="sliced" fillcenter="false" />
-			    	<sprite color="[mediumGrey]" type="sliced" />
-					<grid name="itemActions" rows="4" cols="1" pos="0,-10" width="62" cell_width="62" cell_height="70" controller="ItemActionList">
+					<sprite pos="0,-210" height="470" color="[mediumGrey]" type="sliced" />
+					<grid name="itemActions" rows="3" cols="1" pos="0,0" width="58" height="100%" cell_width="58" cell_height="70" controller="ItemActionList" repeat_content="true" visible="false">
 						<item_action_entry />
-						<item_action_entry />
-						<item_action_entry />
-						<rect name="recipeCraftCountControl" width="36" height="120" pos="0,-353" controller="RecipeCraftCount">
-							<button depth="4" name="countMax" style="icon30px, press" pos="31,-64" sprite="ui_game_symbol_arrow_max" pivot="center" sound="[paging_click]"/>
-					    	<button depth="4" name="countUp" style="icon30px, press, held" pos="31,-96" sprite="ui_game_symbol_arrow_right" pivot="center" sound="[paging_click]"/>
-					    	<textfield name="count_input" depth="4" pos="31,-128" width="40" height="28" pivot="center" character_limit="4" validation="integer" virtual_keyboard_prompt="vkPromptCount" />
-					    	<button depth="4" name="countDown" style="icon30px, press, held" pos="31,-160" sprite="ui_game_symbol_arrow_left" pivot="center" sound="[paging_click]"/>
-						</rect>
 					</grid>
-					<rect depth="2" name="searchControls" width="36" height="121" pos="0,-556">
-						<button depth="4" name="ingredientsButton" style="icon30px, press" pos="31,0" sprite="ui_game_symbol_resource" pivot="center" tooltip_key="ingredient" sound="[paging_click]" selected="true" />
-						<button depth="4" name="descriptionButton" style="icon30px, press" pos="31,-40" sprite="ui_game_symbol_book" pivot="center" tooltip_key="lblBookDesc" sound="[paging_click]" />
-						<button depth="4" name="showunlocksButton" style="icon30px, press" pos="31,-80" sprite="ui_game_symbol_unlock" pivot="center" tooltip_key="xuiSkillUnlocks" sound="[paging_click]" visible="{showunlockedbytab}" />
+					<rect name="recipeCraftCountControl" pos="0,-253" width="36" height="120" controller="RecipeCraftCount">
+						<button depth="4" name="countMax" style="icon30px, press" pos="31,-64" sprite="ui_game_symbol_arrow_max" pivot="center" sound="[paging_click]"/>
+					    <button depth="4" name="countUp" style="icon30px, press, held" pos="31,-96" sprite="ui_game_symbol_arrow_right" pivot="center" sound="[paging_click]"/>
+					    <textfield name="count_input" depth="4" pos="31,-128" width="40" height="28" pivot="center" character_limit="4" validation="integer" virtual_keyboard_prompt="vkPromptCount" />
+					    <button depth="4" name="countDown" style="icon30px, press, held" pos="31,-160" sprite="ui_game_symbol_arrow_left" pivot="center" sound="[paging_click]"/>
+					</rect>
+					<rect depth="2" name="searchControls" pos="0,-596" width="36" height="121">
+						<button depth="4" name="ingredientsButton" pos="0,0" size="0,0" pivot="topleft"/>
+						<button depth="4" name="descriptionButton" style="icon30px, press" pos="31,0" sprite="ui_game_symbol_book" pivot="center" tooltip_key="lblBookDesc" sound="[paging_click]" selected="true" visible="{showunlockedbytab}"/>
+						<button depth="4" name="showunlocksButton" style="icon30px, press" pos="31,-40" sprite="ui_game_symbol_unlock" pivot="center" tooltip_key="xuiSkillUnlocks" sound="[paging_click]" visible="{showunlockedbytab}" />
 					</rect>
 				</rect>
-				<rect depth="1" pos="3,-233" name="description" width="372" height="447" visible="{showdescription}">
-					<!--sprite depth="3" name="backgroundMain" sprite="menu_empty3px" pos="-3,3" width="378" height="453" color="[black]" type="sliced" fillcenter="false" /-->
+				<rect depth="1" pos="3,-233" name="description" width="372" height="447" visible="{#!showunlockedby}">
 					<panel depth="1" name="header" pos="0,0" height="43">
 						<sprite depth="8" sprite="menu_empty3px" width="378" pos="-3,0" color="[black]" type="sliced" fillcenter="false" />
 						<label depth="1" pos="0,-22" font_size="32" text="DESCRIPTION" text_key="xuiDescriptionLabel" pivot="left" justify="center" color="[white]" />
 					</panel>
-					<rect pos="0,-43" height="404">
+					<rect pos="0,-43" height="175">
 						<sprite depth="1" color="[darkGrey]" type="sliced" globalopacity="true" />
 			    		<label depth="3" name="descriptionText" pos="10,-10" text="{itemdescription}" width="352" parse_actions="true" />
 					</rect>
-				</rect>
-				<rect depth="1" pos="3,-233" name="ingredients" width="372" height="291" visible="{showingredients}">
-					<panel depth="1" name="header" pos="0,0" height="43">
-						<sprite depth="8" sprite="menu_empty3px" width="378" pos="-3,0" color="[black]" type="sliced" fillcenter="false" />
-						<label depth="1" pos="0,-22" font_size="32" text="INGREDIENTS" text_key="xuiIngredients" pivot="left" justify="center" color="[white]" />
-					</panel>
-					<grid pos="0,-43" rows="2" cols="3" width="372" height="248" cell_height="124" cell_width="124" controller="IngredientList" arrangement="horizontal">
-						<ingredient_row name="1"/>
-						<ingredient_row name="2"/>
-						<ingredient_row name="3"/>
-						<ingredient_row name="4"/>
-						<ingredient_row name="5"/>
-						<ingredient_row name="6"/>
-					</grid>
-					<rect depth="1" name="plug" pos="0,-291">
-						<sprite color="[darkGrey]" height="156" type="sliced" />
+					<rect depth="1" pos="0,-218" name="ingredients" height="229">
+						<sprite color="[darkGrey]" type="sliced"/>
+						<panel depth="1" name="header" pos="0,0" height="43">
+							<sprite depth="8" sprite="menu_empty3px" width="378" pos="-3,0" color="[black]" type="sliced" fillcenter="false" />
+							<label depth="1" pos="0,-22" font_size="32" text="INGREDIENTS" text_key="xuiIngredients" pivot="left" justify="center" color="[white]" />
+						</panel>
+						<grid pos="0,-43" rows="2" cols="4" width="372" height="186" cell_width="94" cell_height="93" controller="IngredientList" arrangement="horizontal">
+							<ingredient_grid name="1"/>
+							<ingredient_grid name="2"/>
+							<ingredient_grid name="3"/>
+							<ingredient_grid name="4"/>
+							<ingredient_grid name="5"/>
+							<ingredient_grid name="6"/>
+							<ingredient_grid name="7"/>
+							<ingredient_grid name="8"/>
+						</grid>
 					</rect>
 				</rect>
 				<rect depth="1" pos="3,-233" name="unlockedBy" width="372" height="447" visible="{showunlockedby}">
@@ -276,17 +273,18 @@
 				</rect>
 			    <rect depth="4" pos="375,0" width="62" height="680">
 					<sprite depth="2" name="backgroundMain" sprite="menu_empty3px" pos="0,0" width="62" height="680" color="[black]" type="sliced" fillcenter="false" />
-				    <sprite color="[mediumGrey]" type="sliced" />
 				    <rect pos="0,0" width="62" height="100%" visible="{shownormaloptions}" >
-					    <grid name="itemActions" rows="5" cols="1" pos="0,-10" width="62" height="100%" cell_width="62" cell_height="70" controller="ItemActionList" repeat_content="true" visible="false">
+						<sprite pos="0,-350" height="330" color="[mediumGrey]" type="sliced" />
+					    <grid name="itemActions" rows="5" cols="1" pos="0,0" width="58" height="100%" cell_width="58" cell_height="70" controller="ItemActionList" repeat_content="true" visible="false">
 						    <item_action_entry />
 					    </grid>
 				    </rect>
 				    <rect pos="0,0" width="62" height="100%" visible="{showtraderoptions}" >
-				    	<grid name="vendorItemActions" rows="4" cols="1" pos="0,-10" width="62" height="100%" cell_width="62" cell_height="70" controller="ItemActionList" repeat_content="true" visible="false">
+				    	<sprite pos="0,-280" height="400" color="[mediumGrey]" type="sliced" />
+						<grid name="vendorItemActions" rows="4" cols="1" pos="0,0" width="58" height="100%" cell_width="58" cell_height="70" controller="ItemActionList" repeat_content="true" visible="false">
 				    		<item_action_entry />
 				    	</grid>
-				    	<rect name="counterControl" width="36" height="120" pos="0,-353" controller="Counter">
+				    	<rect name="counterControl" width="36" height="120" pos="0,-320" controller="Counter">
 				    		<button depth="4" name="countMax" style="icon30px, press" pos="31,0" sprite="ui_game_symbol_arrow_max" pivot="center" sound="[paging_click]"/>
 					    	<button depth="4" name="countUp" style="icon30px, press, held" pos="31,-37" sprite="ui_game_symbol_arrow_right" pivot="center" sound="[paging_click]"/>
 					    	<textfield name="count_input" depth="4" pos="31,-72" width="40" height="28" pivot="center" character_limit="4" validation="integer" virtual_keyboard_prompt="vkPromptCount" />
@@ -394,15 +392,15 @@
 			<rect name="contentBuffInfo" height="680" depth="1" pos="0,-46">
 				<sprite depth="5" name="backgroundMain" sprite="menu_empty3px" color="[black]" type="sliced" fillcenter="false"/>
 				<sprite depth="1" name="background" color="[black]" type="sliced" visible="false" sprite="menu_empty3px" fillcenter="false"/>
-				<sprite depth="1" color="[darkGrey]" type="sliced" globalopacity="true"/>
+				<sprite depth="1" width="374" color="[darkGrey]"  type="sliced" globalopacity="true"/>
 				<rect depth="1" pos="0,0" name="description" width="374" height="420">
 					<label depth="3" name="descriptionText" pos="10,-10" text="{buffdescription}" width="354"/>
 				</rect>
 				<rect depth="4" pos="374,0" width="62">
 					<sprite depth="2" name="backgroundMain" sprite="menu_empty3px" pos="0,0" width="62" color="[black]" type="sliced" fillcenter="false" />
-				   	<!--sprite color="[mediumGrey]" type="sliced" /-->
+				   	<sprite pos="0,-280" height="400" color="[mediumGrey]" type="sliced" />
 				    <rect pos="0,0" width="62" height="100%" visible="{shownormaloptions}" >
-					    <grid name="itemActions" rows="4" cols="1" pos="0,-10" width="62" height="100%" cell_width="62" cell_height="70" controller="ItemActionList" repeat_content="true">
+					    <grid name="itemActions" rows="4" cols="1" pos="0,0" width="60" height="100%" cell_width="60" cell_height="70" controller="ItemActionList" repeat_content="true">
 						    <item_action_entry />
 					    </grid>
 				    </rect>
@@ -456,9 +454,9 @@
 				</rect>
 				<rect depth="4" pos="374,0" width="62">
 					<sprite depth="2" name="backgroundMain" sprite="menu_empty3px" pos="0,0" width="62" color="[black]" type="sliced" fillcenter="false" />
-				   	<sprite color="[mediumGrey]" type="sliced" />
+				   	<sprite pos="0,-280" height="400" color="[mediumGrey]" type="sliced" />
 				    <rect pos="0,0" width="62" height="100%" visible="{shownormaloptions}" >
-					    <grid name="itemActions" rows="4" cols="1" pos="0,-10" width="62" height="100%" cell_width="62" cell_height="70" controller="ItemActionList" repeat_content="true" visible="false">
+					    <grid name="itemActions" rows="4" cols="1" pos="0,0" width="58" height="100%" cell_width="58" cell_height="70" controller="ItemActionList" repeat_content="true" visible="false">
 						    <item_action_entry />
 					    </grid>
 				    </rect>

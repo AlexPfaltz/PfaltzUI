@@ -1,7 +1,6 @@
 <Config>
 	<remove xpath="/controls/recipe_entry"/>
 	<remove xpath="/controls/item_action_entry"/>
-	<remove xpath="/controls/ingredient_row"/>
 	<remove xpath="/controls/unlocked_by_row"/>
 	<remove xpath="/controls/trader_item"/>
 	<remove xpath="/controls/active_buff_entry"/>
@@ -18,22 +17,22 @@
 			</rect>
 		</recipe_entry>
 		<item_action_entry>
-			<rect height="70" style="press, hover" controller="ItemActionEntry" disabled_font_color="[disabledLabelColor]" default_font_color="[labelColor]" tooltip="{actionname}">
-				<sprite depth="1" name="background" color="[mediumGrey]" type="sliced" on_press="true" on_hover="true" width="62" sound_play_on_hover="[default_hover]"/>
-				<sprite depth="4" name="Icon" sprite="{actionicon}" size="24,24" color="{statuscolor}" pos="31,-12" pivot="center" foregroundlayer="true"/>
+			<rect height="70" controller="ItemActionEntry" disabled_font_color="[disabledLabelColor]" default_font_color="[labelColor]" default_background_color="[mediumGrey]">
+				<sprite depth="1" name="background" color="[mediumGrey]" type="sliced" width="60" on_press="true" on_hover="true" sound_play_on_hover="[default_hover]" gamepad_selectable="false" tooltip="{actionname}"/>
+				<sprite depth="4" name="Icon" sprite="{actionicon}" size="24,24" color="{statuscolor}" pos="31,-10" pivot="top" foregroundlayer="true"/>
 				<label depth="4" name="Name" pos="0,0" width="0" height="0" text="" font_size="1" color="{statuscolor}" pivot="left" />
-				<gamepad_icon depth="4" name="gamepadIcon" pos="31,-44" size="32,32" pivot="center" />
-				<label depth="4" name="keyboardButton" pos="31,-44" width="62" height="26" text="&lt;W&gt;" font_size="26" color="{statuscolor}" effect="shadow" pivot="center" justify="center" />
+				<gamepad_icon depth="4" name="gamepadIcon" pos="31,-70" size="32,32" pivot="bottom" visible="{inspectheld}"/>
+				<label depth="4" name="keyboardButton" pos="0,-70" width="62" height="26" text="&lt;W&gt;" font_size="26" color="{statuscolor}" effect="shadow" pivot="bottomLeft" justify="center" />
 			</rect>
 		</item_action_entry>
-		<ingredient_row>
-			<rect name="row" style="hover" width="124" height="124" controller="IngredientEntry" tooltip="{itemname}">
-				<sprite depth="2" name="backgroundMain" sprite="menu_empty3px" pos="-3,3" width="130" height="130" color="[black]" type="sliced" fillcenter="false" />
-				<sprite color="[lightGrey]" type="sliced" />
-				<sprite depth="2" name="icon" width="96" height="96" atlas="ItemIconAtlas" sprite="{itemicon}" color="{itemicontint}" pos="62,-52" pivot="center" foregroundlayer="true"/>
-				<label depth="3" name="needCount" pos="62,-114" width="124" height="26" font_size="26" color="[labelColor]" effect="outline" effect_distance="1,1" effect_color="0,0,0,255" justify="center" pivot="Bottom" text="{haveneedcount}"/>
+		<ingredient_grid>
+			<rect name="row" style="hover" controller="IngredientEntry" tooltip="{itemname}">
+				<sprite depth="2" name="backgroundMain" sprite="menu_empty3px" pos="-3,3" width="97" height="96" color="[black]" type="sliced" fillcenter="false" />
+				<sprite depth="3" name="background" width="91" height="90" color="[lightGrey]" type="sliced" />
+				<sprite depth="4" name="icon" width="72" height="72" atlas="ItemIconAtlas" sprite="{itemicon}" color="{itemicontint}" pos="46,-10" pivot="top" foregroundlayer="true"/>
+				<label depth="5" name="needCount" pos="46,-93" width="93" height="26" font_size="26" color="[labelColor]" effect="outline" effect_distance="1,1" effect_color="0,0,0,255" justify="center" pivot="bottom" text="{haveneedcount}"/>
 			</rect>
-		</ingredient_row>
+		</ingredient_grid>
 		<unlocked_by_row>
 			<rect name="row" width="372" height="248" controller="UnlockByEntry">
 				<!--sprite depth="2" name="backgroundMain" sprite="menu_empty3px" pos="-3,3" width="378" height="254" color="[black]" type="sliced" fillcenter="false" /-->
