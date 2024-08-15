@@ -26,7 +26,7 @@
 			</rect>
 		</item_action_entry>
 		<ingredient_grid>
-			<rect name="row" style="hover" controller="IngredientEntry" tooltip="{itemname}">
+			<rect width="91" height="90" name="grid" style="hover" controller="IngredientEntry" tooltip="{itemname}">
 				<sprite depth="2" name="backgroundMain" sprite="menu_empty3px" pos="-3,3" width="97" height="96" color="[black]" type="sliced" fillcenter="false" />
 				<sprite depth="3" name="background" width="91" height="90" color="[lightGrey]" type="sliced" />
 				<sprite depth="4" name="icon" width="72" height="72" atlas="ItemIconAtlas" sprite="{itemicon}" color="{itemicontint}" pos="46,-10" pivot="top" foregroundlayer="true"/>
