@@ -410,7 +410,9 @@
 		<window name="windowTrader"  width="531" height="763" panel="Left" controller="TraderWindow" cursor_area="true" >
 			<panel name="header" height="43" depth="1" backgroundspritename="ui_game_panel_header">
 				<sprite pos="0,0" depth="2" name="windowIcon" size="0,0" style="icon32px" sprite="ui_game_symbol_map_trader" visible="false"/>
-				<label pos="0,0" controller="PlayerName" on_press="true" style="header.name" size="0,0" visible="false"/>
+				<panel name="DropName" pos="99999,99999" width="0" height="0" >
+					<player_name  width="320" height="32" />
+				</panel>
 				<grid name="categories" pos="23,-21" rows="1" cols="15" width="390" height="43" cell_width="43" cell_height="43" repeat_content="true" controller="CategoryList">
 					<category_icon />
 				</grid>
